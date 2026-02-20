@@ -71,8 +71,8 @@ table(submeta$Subclude)
 stat_df <- data.frame()
 for(cl in c('subclade_post_a','subclade_post_b','subclade_post_c','subclade_post_d','subclade_pre')){
   for(i in 1:nrow(subsnp)){
-    snpvec1 <- as.character(subsnp[i,submeta$subclude == cl])
-    snpvec0 <- as.character(subsnp[i,submeta$subclude != cl])
+    snpvec1 <- as.character(subsnp[i,submeta$Subclude == cl])
+    snpvec0 <- as.character(subsnp[i,submeta$Subclude != cl])
     
     all_bases <- as.character(subsnp[i,])
     all_bases_clean <- all_bases[!all_bases %in% c("-", "N", "")]
@@ -109,6 +109,6 @@ stat_df$padj <- p.adjust(stat_df$p, method = 'bonferroni')
 stat_df <- stat_df[stat_df$padj < 1e-5,]
 nrow(stat_df)
 plot(stat_df$site, log(stat_df$padj)*-1)
-plot(stat_df$G_prop, stat_df$nG_prop, xlim = c(0,1), ylim = c(0,1))
+plot(stat_df$clade_prop, stat_df$others_prop, xlim = c(0,1), ylim = c(0,1))
 
 write.csv(stat_df,'clade_specific_snp.csv', row.names = F, quote = F)
