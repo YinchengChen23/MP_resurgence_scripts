@@ -69,20 +69,6 @@ A variant was considered a clade-specific mutation when the alternative allele w
 - R
 - Python with Jupyter
 
-## Usage
-
-Clone the repository and run the scripts from the repository root, so that relative paths to `data/` and `ref/` resolve correctly:
-
-```bash
-git clone https://github.com/YinchengChen23/REPO.git   # TODO: repo name
-cd REPO
-
-Rscript Fig3.R
-Rscript Fig4.R
-Rscript snp_stat.R
-jupyter notebook variants_annotation.ipynb
-```
-
 ## Versions
 
 | Release | Description |
